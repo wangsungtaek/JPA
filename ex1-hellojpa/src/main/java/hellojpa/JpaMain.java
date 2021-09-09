@@ -16,18 +16,27 @@ public class JpaMain {
         tx.begin();
 
         try {
+
+            Member member = new Member();
+            member.setId(1L);
+            member.setName("A");
+            member.setRoleType(RoleType.USER);
+
+            em.persist(member);
+
             /* detach
             실행 flow
             1. 영속성 컨텍스트가 1차 캐시에 150L member를 캐싱한다.
             2. 영속성 컨텍스트가 관리하는 member객체의 이름을 변경한다.
             3. 영속상태의 member를 준영속 상태로 만든다.
             4. 그 결과, select query만 날라간다. detach가 없으면 update쿼리 까지 날라감
-             */
+
             Member member = em.find(Member.class, 150L);
             member.setName("AAAA");
 
             em.detach(member);
             System.out.println("========");
+            */
             /* flush
             Member member1 = new Member(200L, "member200");
             em.persist(member1);
