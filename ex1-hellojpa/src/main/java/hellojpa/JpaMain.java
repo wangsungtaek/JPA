@@ -17,12 +17,19 @@ public class JpaMain {
 
         try {
 
+
             Member member = new Member();
-            member.setId(1L);
-            member.setName("A");
+            member.setName("AA");
+
+            em.persist(member);
+            /* hibernate option 확인
+            Member member = new Member();
+            member.setId(2L);
+            member.setName("B");
             member.setRoleType(RoleType.USER);
 
             em.persist(member);
+             */
 
             /* detach
             실행 flow
