@@ -18,6 +18,37 @@ public class JpaMain {
         try {
 
             Team team = new Team();
+            team.setTeamName("TeamA");
+            em.persist(team);
+
+            Member member = new Member();
+            member.setUsername("member1");
+            member.changeTeam(team);
+            em.persist(member);
+
+            /* 양방향 맵핑
+            Team team = new Team();
+            team.setTeamName("TeamA");
+            em.persist(team);
+
+            Member member = new Member();
+            member.setUsername("member1");
+            member.setTeam(team);
+            em.persist(member);
+
+            em.flush();
+            em.clear();
+
+            Member findMember = em.find(Member.class, member.getId());
+            List<Member> members = findMember.getTeam().getMembers();
+
+            for (Member m : members) {
+                System.out.println("m = " + m.getUsername());
+            }
+            */
+
+            /* 단방향 맵핑
+            Team team = new Team();
             team.setTeamName("AAA_TEAM");
 
             em.persist(team);
@@ -32,6 +63,7 @@ public class JpaMain {
 
             Team findTeam = findMember.getTeam();
             System.out.println("findTeam = " + findTeam.getTeamName());
+            */
 
             /* hibernate option 확인
             Member member = new Member();
