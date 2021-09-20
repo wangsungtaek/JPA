@@ -17,14 +17,13 @@ public class JpaMain {
 
         try {
 
-            Team team = new Team();
-            team.setTeamName("TeamA");
-            em.persist(team);
+            Movie movie = new Movie();
+            movie.setDirector("aaaa");
+            movie.setActor("bbbb");
+            movie.setName("바람과함께사라지다");
+            movie.setPrice(1000);
 
-            Member member = new Member();
-            member.setUsername("member1");
-            member.changeTeam(team);
-            em.persist(member);
+            em.persist(movie);
 
             /* 양방향 맵핑
             Team team = new Team();
