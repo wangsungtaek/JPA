@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class JpaMain {
@@ -17,6 +18,14 @@ public class JpaMain {
 
         try {
 
+            Member member = new Member();
+            member.setUsername("user1");
+            member.setCreatedBy("kim");
+            member.setCreatedDate(LocalDateTime.now());
+
+            em.persist(member);
+
+            /* 상속
             Movie movie = new Movie();
             movie.setDirector("aaaa");
             movie.setActor("bbbb");
@@ -24,6 +33,7 @@ public class JpaMain {
             movie.setPrice(1000);
 
             em.persist(movie);
+             */
 
             /* 양방향 맵핑
             Team team = new Team();
