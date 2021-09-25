@@ -19,44 +19,4 @@ public class OrderItem {
 
     private int orderPrice;
     private int count;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public jpabook.jpashop.domain.Item getItem() {
-        return item;
-    }
-
-    public void setItem(jpabook.jpashop.domain.Item item) {
-        this.item = item;
-    }
-
-    public Order getOrder() {
-        return order;
-    }
-
-    public void setOrder(Order order) {
-        this.order = order;
-    }
-
-    public int getOrderPrice() {
-        return orderPrice;
-    }
-
-    public void setOrderPrice(int orderPrice) {
-        this.orderPrice = orderPrice;
-    }
-
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
 }
